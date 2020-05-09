@@ -1,5 +1,4 @@
 module ApplicationHelper
-    module ApplicationHelper
 
   # ページごとにタイトルを返す
   def full_title(page_name = "") # メソッドと引数の定義
