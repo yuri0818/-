@@ -18,6 +18,12 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+ #ユーザー名による絞り込み tuika09 510
+   scope :get_by_name, ->(name) {
+   where("name like ?", "%#{name}%")
+   }
+ 
+ 
   # 渡された文字列のハッシュ値を返します。
   def User.digest(string)
     cost = 
