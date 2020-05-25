@@ -73,7 +73,7 @@ class AttendancesController < ApplicationController
     attendances_params.each do |id, item|
       if item[:started_at].present? && item[:finished_at].blank?
        flash[:danger] = "無効な入力データがあった為、更新をキャンセルしました。"
-       redirect_to attendances_edit_one_month_user_url(date: params[:date]) 
+       redirect_to attendances_edit_one_month_user_url(date: params[:date]) and return 
       end
     end 
   end
